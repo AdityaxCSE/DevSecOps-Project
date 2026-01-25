@@ -15,6 +15,7 @@ pipeline {
             steps {
                 echo "Triggered by GitHub webhook"
             }
+        }
         stage('Git Checkout') {
             steps {
                 git branch: 'main', credentialsId: 'github-cred', url: 'https://github.com/AdityaxCSE/DevSecOps-Project.git'
