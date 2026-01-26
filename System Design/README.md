@@ -3,50 +3,24 @@
 ![Project Architecture Diagram](project-architecture.png)
 
 ### Project Architecture Diagram (Logical View)
-+--------------------------------------------------+
-|              Kubernetes Cluster                  |
-|                                                  |
-|   +-------------+                                |
-|   | Master Node |                                |
-|   +-------------+                                |
-|        |                                         |
-|  -------------------------                       |
-|  |                       |                      |
-|+-----------+       +-----------+                |
-|| Worker 1  |       | Worker 2  |                |
-|+-----------+       +-----------+                |
-|                                                  |
-+--------------------------------------------------+
-                ↑
-                |
-        Deployment via kubectl
-                |
-+--------------------------------------------------+
-|                DevOps Tools Layer                |
-|                                                  |
-|   +-----------+                                  |
-|   | Jenkins   |  (CI/CD Orchestrator)            |
-|   +-----------+                                  |
-|     |       |                                    |
-|     |       +------------------+                 |
-|     |                          |                 |
-|+------------+          +------------+            |
-|| SonarQube  |          |   Nexus    |            |
-|| Code Scan  |          | Artifacts  |            |
-|+------------+          +------------+            |
-|                                                  |
-+--------------------------------------------------+
-                |
-                | Metrics & Health Data
-                ↓
-+--------------------------------------------------+
-|               Monitoring Layer                   |
-|                                                  |
-|      Prometheus  <---- metrics collection        |
-|            |                                     |
-|         Grafana  ----> dashboards                |
-|                                                  |
-+--------------------------------------------------+
+[Kubernetes Cluster]
+ ├─ Master Node
+ ├─ Worker Node 1
+ └─ Worker Node 2
+        ↑
+        |
+     kubectl
+        |
+[ DevOps Tools ]
+ ├─ Jenkins
+ ├─ SonarQube
+ └─ Nexus
+        |
+     Metrics
+        |
+[ Monitoring ]
+ ├─ Prometheus
+ └─ Grafana
 
 ### Architecture Overview
 
