@@ -3,24 +3,36 @@
 ![Project Architecture Diagram](project-architecture.png)
 
 ### Project Architecture Diagram (Logical View)
-[Kubernetes Cluster]
- ├─ Master Node
- ├─ Worker Node 1
- └─ Worker Node 2
-        ↑
-        |
-     kubectl
-        |
-[ DevOps Tools ]
- ├─ Jenkins
- ├─ SonarQube
- └─ Nexus
-        |
-     Metrics
-        |
-[ Monitoring ]
- ├─ Prometheus
- └─ Grafana
+
+[ Developer / GitHub ]
+          |
+          v
+[ Jenkins CI/CD ]
+          |
+   -------------------
+   |                 |
+[ SonarQube ]     [ Nexus ]
+   |                 |
+   -------------------
+          |
+   [ Security Scans ]
+   (Trivy / kube-audit)
+          |
+          v
+[ Kubernetes Cluster ]
+   - Master Node
+   - Worker Node 1
+   - Worker Node 2
+          |
+          v
+[ Application Running ]
+          |
+          v
+[ Monitoring Stack ]
+   - Prometheus
+   - Grafana
+   - Blackbox Exporter
+
 
 ### Architecture Overview
 
