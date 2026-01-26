@@ -1,7 +1,7 @@
-# Security Stage
+# Security Step
 
 ## Purpose
-The security stage ensures that the application and infrastructure
+The security step ensures that the application and infrastructure
 are protected against vulnerabilities and misconfigurations.
 
 ## Tools Used
@@ -14,5 +14,5 @@ are protected against vulnerabilities and misconfigurations.
 - Kubernetes cluster configurations
 
 ## Outcome
-Only secure and compliant artifacts are allowed to move to the deployment stage.
+Only secure and compliant artifacts are allowed to move to the deployment step.
 
