@@ -32,10 +32,12 @@ This project demonstrates a complete **DevSecOps pipeline** deployed on a **Kube
 | Grafana | Visualization |
 
 ## Documentation Index
-- [Kubernetes Setup](kubernetes/)
-- [Jenkins Setup](jenkins/)
-- [SonarQube Setup](sonar/)
-- [Nexus Setup](nexus/)
-- [Security Tools](security/)
-- [Monitoring Stack](monitoring/)
+
+- [Kubernetes Setup](docs/kubernetes-setup.md)
+- [Jenkins Setup](docs/jenkins-setup.md)
+- [SonarQube Setup](docs/sonarqube-setup.md)
+- [Nexus Setup](docs/nexus-setup.md)
+- [Security Tools](docs/security-tools.md)
+- [Monitoring Stack](docs/monitoring-stack.md)
+
 
