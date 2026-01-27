@@ -7,8 +7,8 @@ The **Deployment Step** is responsible for deploying validated and secure applic
 
 ## Kubernetes Cluster Overview
 The application is deployed to a Kubernetes cluster consisting of:
-- **1  Master Node (Control Plane)**
-- **2  Worker Nodes**
+- **1 Master Node (Control Plane)**
+- **2 Worker Nodes**
 
 The cluster manages pod scheduling, scaling, and service availability.
 
