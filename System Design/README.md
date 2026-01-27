@@ -1,7 +1,6 @@
 ### Project Architecture Diagram
 
-![Project Architecture Diagram](logical architecture-update.drawio.png)
-
+<img src="logical-architecture-update.drawio.png" alt="Project Architecture Diagram" width="800">
 
 ## Logical Flow of Project Architecture
 
