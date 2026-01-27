@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: boardgame
-          image: adi35tya/boardgameapp:latest
+          image: adi35tya/boardgameapp:__IMAGE_TAG__
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
