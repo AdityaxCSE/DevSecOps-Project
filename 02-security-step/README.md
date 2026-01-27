@@ -1,4 +1,4 @@
-# 02 – Security Step (DevSecOps)
+# Security Step (DevSecOps)
 
 ## Purpose
 The **Security Step** ensures that both the application and the infrastructure are protected against vulnerabilities and misconfigurations.  
