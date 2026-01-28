@@ -9,7 +9,7 @@ This document describes the setup of a **3-node Kubernetes cluster** consisting 
   - kubelet
   - kubectl
 - Initialize the cluster:
-  ```bash
+  '''bash
   kubeadm init
 
 Configure kubectl access for the admin user
