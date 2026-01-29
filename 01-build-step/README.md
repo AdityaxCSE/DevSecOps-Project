@@ -2,7 +2,7 @@
 
 ## Purpose
 The build step is responsible for compiling source code, performing static code analysis,
-and storing build artifacts.AI Automation is integrated using n8n to orchestrate conditional workflows, notifications, and automation actions around the Jenkins pipeline.
+and storing build artifacts. AI Automation is integrated using n8n to orchestrate conditional workflows, notifications, and automation actions around the Jenkins pipeline.
 
 ## Tools Used
 - Jenkins (CI/CD Orchestration)
