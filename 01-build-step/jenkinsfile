@@ -9,6 +9,7 @@ pipeline {
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
 	    IMAGE_TAG = "${env.BUILD_NUMBER}"
+	    N8N_WEBHOOK_URL = "http://65.0.126.229:5678/webhook/cve-analysis"
     }
 
     stages {
@@ -107,10 +108,46 @@ pipeline {
                 }
             }
         }
+        stage('Extract CRITICAL CVEs') {
+            steps {
+                sh '''
+                grep -i "CRITICAL" trivy-*-report.html \
+                | grep -oE "CVE-[0-9]{4}-[0-9]+" \
+                | sort -u \
+                > critical-cves.txt || true
+
+                echo "===== CRITICAL CVEs FOUND ====="
+                if [ -s critical-cves.txt ]; then
+                    cat critical-cves.txt
+                else
+                    echo "No CRITICAL CVEs found"
+                fi
+                '''
+            }
+        }
+
+        stage('Send CVEs to n8n for AI Analysis') {
+            steps {
+                sh '''
+                if [ -s critical-cves.txt ]; then
+                    curl -X POST ${N8N_WEBHOOK_URL} \
+                        -H "Content-Type: text/plain" \
+                        --data-binary @critical-cves.txt
+                else
+                    echo "Skipping n8n call – no CRITICAL CVEs"
+                fi
+                '''
+            }
+        }
     }
     
     post {
         always {
+            archiveArtifacts artifacts: '''
+                critical-cves.txt,
+                trivy-fs-report.html,
+                trivy-image-report.html
+            ''', fingerprint: true
             script {
                 def jobName = env.JOB_NAME
                 def buildNumber = env.BUILD_NUMBER
@@ -137,9 +174,9 @@ pipeline {
                 emailext(
                     subject: "${jobName} - Build ${buildNumber} - ${statusUpper}",
                     body: body,
-                    to: 'knpaditya2001@gmail.com',
-                    from: 'jenkins@example.com',
-                    replyTo: 'jenkins@example.com',
+                    to: 'gamerzwar37@gmail.com',
+                    from: 'knpaditya2001@gmail.com',
+                    replyTo: 'knpaditya2001@gmail.com',
                     mimeType: 'text/html',
                     attachmentsPattern: 'trivy-*-report.html'
                 )
