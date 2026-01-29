@@ -10,7 +10,7 @@ It automates source code validation, security scanning, artifact storage, deploy
 The system follows a **layered logical architecture** that separates CI/CD automation, application runtime, and monitoring.
 
 ### Project Architecture Diagram
-![Project Architecture Diagram](System%20Design/logical%20architecture-update.drawio.png)
+![Project Architecture Diagram](System%20Design/logical%20architecture-final.drawio.png)
 
 
 ---
