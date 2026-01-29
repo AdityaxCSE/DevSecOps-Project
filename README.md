@@ -1,13 +1,13 @@
 # Secure CI/CD Pipeline with Kubernetes (DevSecOps)
 
 ## Project Overview
-This project implements an end-to-end **DevSecOps CI/CD pipeline** using Jenkins, Kubernetes, and modern monitoring tools.  
+This project implements an end-to-end DevSecOps CI/CD pipeline using Jenkins, Kubernetes, AI-driven automation (n8n), and modern monitoring tools.
 It automates source code validation, security scanning, artifact storage, deployment, and observability, following real-world industry best practices.
 
 ---
 
 ## Architecture Overview
-The system follows a **layered logical architecture** that separates CI/CD automation, application runtime, and monitoring.
+The system follows a layered logical architecture that separates CI/CD automation, AI-driven workflow orchestration, application runtime, and monitoring.
 
 ### Project Architecture Diagram
 ![Project Architecture Diagram](System%20Design/logical%20architecture-final.drawio.png)
@@ -24,7 +24,7 @@ Detailed setup and configuration guides for each major component:
 - [Nexus Setup](docs/nexus-setup.md)
 - [Security Tools](docs/security-tools.md)
 - [Monitoring Stack](docs/monitoring-stack.md)
-
+- [AI Automation (n8n)](docs/n8n-setup.md)
 ---
 
 ## CI/CD Pipeline Stages
