@@ -64,10 +64,7 @@ The CI/CD pipeline is organized into clear, modular stages:
 - CI/CD and Kubernetes interview preparation
 - DevSecOps practice environments
 
----
 
-## License
-This project is for educational and demonstration purposes.
 
 
 
