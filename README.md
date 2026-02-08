@@ -11,10 +11,16 @@ The system follows a layered logical architecture that separates CI/CD automatio
 
 ### Project Architecture Diagram
 ![Project Architecture Diagram](System%20Design/logical%20architecture-final.drawio.png)
+#### n8n Pipeline
+![n8n Pipeline](https://drive.google.com/uc?export=view&id=1k7e-hpPvSj-64ZkdebVMInltUOkiSXCh)
 
 
 ---
 
+## Pipelines Explanation
+- [Jenkinsfile Stage Explanation](jenkins-workflow.md)
+- [n8n Pipeline Explanation](n8n-workflow.md)
+---
 ## Documentation Index
 Detailed setup and configuration guides for each major component:
 
