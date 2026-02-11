@@ -69,8 +69,6 @@ The CI/CD pipeline is organized into clear, modular stages:
 - Academic project evaluation
 - CI/CD and Kubernetes interview preparation
 - DevSecOps practice environments
-- AI -Analaysis
-
 
 
 
