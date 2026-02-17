@@ -64,11 +64,7 @@ The CI/CD pipeline is organized into clear, modular stages:
 
 ---
 
-## Intended Audience
-- DevOps learners and students
-- Academic project evaluation
-- CI/CD and Kubernetes interview preparation
-- DevSecOps practice environments
+
 
 
 
