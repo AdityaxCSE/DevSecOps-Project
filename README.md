@@ -63,6 +63,7 @@ The CI/CD pipeline is organized into clear, modular stages:
 - Industry-aligned project structure
 
 ---
+rere
 
 
 
