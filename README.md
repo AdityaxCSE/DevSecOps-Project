@@ -1,71 +1,94 @@
-# Secure CI/CD Pipeline with Kubernetes (DevSecOps)
+# 🔐 Secure CI/CD Pipeline with Kubernetes (DevSecOps)
 
-## Project Overview
-This project implements an end-to-end DevSecOps CI/CD pipeline using Jenkins, Kubernetes, AI-driven automation (n8n), and modern monitoring tools.
-It automates source code validation, security scanning, artifact storage, deployment, and observability, following real-world industry best practices.
+## 📌 Overview
+This project implements a **production-grade DevSecOps CI/CD pipeline** that automates application delivery with integrated security, AI-driven analysis, and full observability.
+
+It demonstrates how modern organizations build **secure, scalable, and automated deployment systems** using industry tools like Jenkins, Kubernetes, SonarQube, Trivy, Nexus, Prometheus, Grafana, and n8n.
 
 ---
 
-## Architecture Overview
-The system follows a layered logical architecture that separates CI/CD automation, AI-driven workflow orchestration, application runtime, and monitoring.
+## 🎯 Objectives
+- Automate the complete software delivery lifecycle  
+- Integrate **security at every stage (Shift Left Security)**  
+- Deploy applications on a **scalable Kubernetes cluster**  
+- Enable **AI-driven vulnerability analysis**  
+- Provide **real-time monitoring and alerting**  
 
-### Project Architecture Diagram
-![Project Architecture Diagram](System%20Design/logical%20architecture-final.drawio.png)
-#### n8n Pipeline
+---
+
+## 🏗️ Architecture Overview
+
+The system follows a **layered architecture**, ensuring separation of concerns and scalability.
+
+### 🔹 Core Layers:
+1. **CI/CD Automation Layer** – Jenkins pipeline execution  
+2. **Security Layer** – Code and container vulnerability scanning  
+3. **Artifact Management Layer** – Nexus repository  
+4. **Container Orchestration Layer** – Kubernetes cluster  
+5. **AI Automation Layer** – n8n workflow with Gemini API  
+6. **Monitoring Layer** – Prometheus + Grafana  
+
+---
+
+## 📊 Architecture Diagram
+![Architecture](System%20Design/logical%20architecture-final.drawio.png)
+
+---
+
+## 🤖 n8n Automation Workflow
 ![n8n Pipeline](https://drive.google.com/uc?export=view&id=1k7e-hpPvSj-64ZkdebVMInltUOkiSXCh)
 
+---
+
+## ⚙️ CI/CD Pipeline Stages
+
+### 🧱 1. Build Stage (CI)
+- Triggered via GitHub webhook  
+- Code is compiled and tested using Maven  
+- Code quality analysis using SonarQube  
 
 ---
 
-## Pipelines Explanation
-- [Jenkinsfile Stage Explanation](jenkins-workflow.md)
-- [n8n Pipeline Explanation](n8n-workflow.md)
----
-## Documentation Index
-Detailed setup and configuration guides for each major component:
-
-- [Kubernetes Setup](docs/kubernetes-setup.md)
-- [Jenkins Setup](docs/jenkins-setup.md)
-- [SonarQube Setup](docs/sonarqube-setup.md)
-- [Nexus Setup](docs/nexus-setup.md)
-- [Security Tools](docs/security-tools.md)
-- [Monitoring Stack](docs/monitoring-stack.md)
-- [AI Automation (n8n)](docs/n8n-setup.md)
----
-
-## CI/CD Pipeline Stages
-The CI/CD pipeline is organized into clear, modular stages:
-
-- [01 – Build Step (CI/CD & Code Quality)](01-build-step/README.md)
-- [02 – Security Step](02-security-step/README.md)
-- [03 – Deploy Step (Kubernetes)](03-deploy-step/README.md)
-- [04 – Monitoring Step](04-monitoring-step/README.md)
+### 🔐 2. Security Stage (DevSecOps)
+- **Trivy File System Scan** – detects vulnerabilities in dependencies  
+- **Trivy Image Scan** – scans Docker images before deployment  
+- Ensures only secure artifacts move forward  
 
 ---
 
-## End-to-End Workflow Summary
-1. A developer pushes code to the source repository.
-2. Jenkins triggers the CI/CD pipeline automatically.
-3. Static code quality analysis and security scans are performed.
-4. Build artifacts and container images are stored in Nexus.
-5. Applications are deployed to the Kubernetes cluster.
-6. Prometheus collects system and cluster metrics.
-7. Grafana visualizes dashboards and alerts.
+### 📦 3. Artifact Management
+- Docker images are pushed to **Nexus Repository**  
+- Provides centralized and version-controlled artifact storage  
 
 ---
 
-## Key Features
-- Automated CI/CD pipeline
-- Integrated security (DevSecOps)
-- Kubernetes-based deployment
-- Centralized artifact management
-- Full monitoring and observability
-- Industry-aligned project structure
+### 🚀 4. Deployment Stage (CD)
+- Application deployed to **Kubernetes cluster**  
+- Uses `kubectl` for automated deployment  
+- Deployment verification ensures successful rollout  
 
 ---
-rere
 
+### 📊 5. Monitoring & Observability
+- **Prometheus** collects system and cluster metrics  
+- **Grafana** visualizes dashboards  
+- Enables real-time monitoring and alerting  
 
+---
 
+### 🤖 6. AI-Driven Security Analysis
+- Trivy scan reports generate CVE data  
+- n8n workflow triggers automatically  
+- Gemini API analyzes vulnerabilities  
+- Generates human-readable reports  
+- Sends notification after pipeline completion  
 
+---
 
+## 🔄 End-to-End Workflow
+
+```text
+Developer Push → Jenkins Trigger → Build & Test → Security Scan →
+Docker Build → Image Scan → Push to Nexus →
+Deploy to Kubernetes → Monitoring →
+CVE Extraction → AI Analysis (n8n + Gemini) → Notification
