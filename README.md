@@ -1,4 +1,5 @@
 # 🔐 Secure CI/CD Pipeline with Kubernetes (DevSecOps)
+[Project Video Link](https://youtu.be/I9klpulDmPQ)
 
 ## 📌 Overview
 This project implements a **production-grade DevSecOps CI/CD pipeline** that automates application delivery with integrated security, AI-driven analysis, and full observability.
